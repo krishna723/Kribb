@@ -4,7 +4,11 @@ import { Image, Text, TouchableOpacity, View } from 'react-native'
 import { formatPrice } from '../lib/utils'
 import { Property } from '../types'
 
-export default function FeaturedCard({property}:{proprty:Property}) {
+type FeaturedCardProps = {
+  property: Property
+}
+
+export default function FeaturedCard({property}: FeaturedCardProps) {
 
   const router=useRouter()
   return (
@@ -20,7 +24,7 @@ export default function FeaturedCard({property}:{proprty:Property}) {
 
     }}
 
-    onPress={()=> router.push(`/(root)/property/${property.id}`)}
+    onPress={()=> router.push(`./(root)/property/${property.id}`)}
     >
       <Image
       source={{uri:property.images[0]}}
